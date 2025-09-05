@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>App de Desenho</title>
+<link rel="stylesheet" href="Drawing-app\style.css">
+</head>
+<body>
+<header>
+<div class="badge">🎨 App de Desenho (HTML + CSS + JS)</div>
+
+
+<div class="toolbar">
+<div class="group" role="group" aria-label="Ferramentas">
+<button class="btn" id="tool-pen" aria-pressed="true" title="Pincel (P)">Pincel</button>
+<button class="btn" id="tool-eraser" aria-pressed="false" title="Borracha (E)">Borracha</button>
+</div>
+
+
+<div class="group" role="group" aria-label="Cor e tamanho">
+<input type="color" id="color" value="#111827" title="Cor" />
+<label for="size" style="font-size:12px; opacity:.85;">Espessura</label>
+<input type="range" id="size" min="1" max="60" value="6" />
+<span id="sizeVal" style="font-size:12px; opacity:.85; width:2ch; text-align:right;">6</span>
+</div>
+
+
+<div class="group" role="group" aria-label="Ações">
+<button class="btn" id="undo" title="Desfazer (Ctrl+Z)">↶ Desfazer</button>
+<button class="btn" id="redo" title="Refazer (Ctrl+Shift+Z)">↷ Refazer</button>
+<button class="btn" id="clear" title="Limpar (Ctrl+K)">🧹 Limpar</button>
+<button class="btn primary" id="save" title="Salvar PNG (Ctrl+S)">💾 Salvar PNG</button>
+</div>
+</div>
+</header>
+
+
+<main>
+<div class="canvas-wrap" id="wrap" aria-label="Área de desenho">
+<canvas id="canvas" aria-label="Tela de desenho"></canvas>
+<div class="hint">Dica: segure Shift para linhas retas</div>
+</div>
+</main>
+
+
+<footer>
+Suporta mouse e toque • Mantém histórico de desfazer/refazer • Exporta com fundo branco
+</footer>
+
+
+<script src="Drawing-app\app.js"></script>
+</body>
+</html>
