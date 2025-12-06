@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawing App</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Minimal overrides for this simple app */
+    body { margin: 0; font-family: Arial, sans-serif; background:#f6f8fa; }
+    header { display:flex; gap:12px; align-items:center; padding:12px; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+    header .group { margin:0; }
+    .controls { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+    button { cursor:pointer; }
+    .active { outline: 2px solid #3b82f6; }
+    #wrap { width: 920px; max-width: calc(100% - 32px); margin: 28px auto; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <div class="controls">
+        <div class="group">
+          <button id="tool-pen" title="Pen (P)" class="active">Pen</button>
+          <button id="tool-eraser" title="Eraser (E)">Eraser</button>
+        </div>
+
+        <div class="group">
+          <label for="color">Color</label>
+          <input id="color" type="color" value="#000000">
+        </div>
+
+        <div class="group">
+          <label for="size">Size</label>
+          <input id="size" type="range" min="1" max="60" value="6">
+          <span id="sizeVal">6</span>
+        </div>
+
+        <div class="group">
+          <button id="undo" title="Undo (Ctrl+Z)">Undo</button>
+          <button id="redo" title="Redo (Ctrl+Shift+Z)">Redo</button>
+          <button id="clear" title="Clear (Ctrl+K)">Clear</button>
+          <button id="save" title="Save (Ctrl+S)">Save PNG</button>
+        </div>
+
+        <div class="group">
+          <button id="save-project" title="Save project file">Save Project</button>
+          <button id="load-project" title="Load project file">Load Project</button>
+          <input id="project-file" type="file" accept="application/json" style="display:none">
+          <button id="restore-autosave" title="Restore last autosave">Restore Autosave</button>
+        </div>
+
+        <div class="group">
+          <label for="autosave">Autosave</label>
+          <input id="autosave" type="checkbox" checked>
+          <label for="smooth">Smooth</label>
+          <input id="smooth" type="checkbox" checked>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="canvas-wrap" style="height:560px;">
+        <canvas id="canvas"></canvas>
+        <div class="hint">Use mouse or touch to draw — P pen, E eraser</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

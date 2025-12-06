@@ -1,0 +1,73 @@
+:root {
+	--bg: #f6f8fa;
+	--panel: #ffffff;
+	--muted: #e6eef8;
+	--accent: #2563eb;
+	--fg: #0f1724;
+}
+
+
+.group {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: var(--panel);
+	padding: 8px 10px;
+	border: 1px solid var(--muted);
+	border-radius: 12px;
+}
+
+
+.slider { width: 160px; }
+input[type="range"] { width: 160px; }
+
+
+input[type="color"] {
+width: 36px; height: 36px;
+border: none; padding: 0; border-radius: 8px; overflow: hidden;
+background: transparent;
+}
+
+
+main {
+	display: grid;
+	grid-template-rows: 1fr;
+	padding: 16px;
+}
+
+
+.canvas-wrap {
+	position: relative;
+	border: 1px solid rgba(15,23,36,0.06);
+	background: #fff;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 6px 18px rgba(15,23,36,0.06);
+}
+
+canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+
+
+.hint {
+position: absolute; bottom: 12px; right: 12px;
+background: rgba(0,0,0,.55);
+color: #fff; font-size: 12px;
+padding: 6px 8px; border-radius: 8px;
+backdrop-filter: blur(4px);
+user-select: none; pointer-events: none;
+}
+
+
+footer { padding: 10px 16px; color: #aab3c2; font-size: 12px; text-align: center; }
+
+/* Header / controls styling used by index.html */
+header { background: var(--panel); padding: 12px; border-radius: 10px; }
+.controls { display:flex; gap:12px; align-items:center; }
+button { background: transparent; border: 1px solid rgba(15,23,36,0.06); padding:8px 10px; border-radius:8px; color:var(--fg); }
+button:hover { background: rgba(15,23,36,0.02); }
+.active { background: linear-gradient(180deg,var(--accent),#1e40af); color:#fff; border-color:transparent; }
+
+@media (max-width:640px) {
+	#wrap { padding: 8px; }
+	.controls { gap:8px; flex-wrap:wrap; }
+}

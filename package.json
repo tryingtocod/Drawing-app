@@ -1,0 +1,14 @@
+{
+  "name": "drawing-app",
+  "version": "1.0.0",
+  "description": "A small browser-based drawing application",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "npx http-server src -p 8000 -c-1",
+    "start:python": "python -m http.server 8000"
+  },
+  "keywords": ["canvas","drawing","javascript"],
+  "author": "tryingtocod",
+  "license": "MIT",
+  "devDependencies": {}
+}

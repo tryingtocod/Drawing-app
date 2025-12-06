@@ -1,0 +1,16 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Logs
+npm-debug.log*
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
