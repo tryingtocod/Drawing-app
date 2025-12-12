@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drawing App</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     /* Minimal overrides for this simple app */
     body { margin: 0; font-family: Arial, sans-serif; background:#f6f8fa; }
@@ -19,10 +20,24 @@
 <body>
   <div id="wrap">
     <header>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <h1 style="margin:0;font-size:20px;">🦊 Drawy — Fun Pixel Paint</h1>
+        <small style="color:#6b7280">(for kids)</small>
+      </div>
       <div class="controls">
         <div class="group">
-          <button id="tool-pen" title="Pen (P)" class="active">Pen</button>
-          <button id="tool-eraser" title="Eraser (E)">Eraser</button>
+          <button id="tool-pen" title="Pen (P)" class="pixel-btn active">✏️ Pen</button>
+          <button id="tool-eraser" title="Eraser (E)" class="pixel-btn">🧽 Eraser</button>
+        </div>
+
+        <div class="group">
+          <label for="brush" style="font-family: 'Press Start 2P', monospace; font-size:10px;">Brush</label>
+          <select id="brush" style="font-family: 'Press Start 2P', monospace; font-size:10px; padding:8px; border:3px solid #000; background:#fff;">
+            <option value="pen">Pen</option>
+            <option value="marker">Marker</option>
+            <option value="paint">Paint Pen</option>
+            <option value="spray">Spray</option>
+          </select>
         </div>
 
         <div class="group">
@@ -37,17 +52,17 @@
         </div>
 
         <div class="group">
-          <button id="undo" title="Undo (Ctrl+Z)">Undo</button>
-          <button id="redo" title="Redo (Ctrl+Shift+Z)">Redo</button>
-          <button id="clear" title="Clear (Ctrl+K)">Clear</button>
-          <button id="save" title="Save (Ctrl+S)">Save PNG</button>
+          <button id="undo" title="Undo (Ctrl+Z)" class="pixel-btn">↩️ Undo</button>
+          <button id="redo" title="Redo (Ctrl+Shift+Z)" class="pixel-btn">↪️ Redo</button>
+          <button id="clear" title="Clear (Ctrl+K)" class="pixel-btn">🗑️ Clear</button>
+          <button id="save" title="Save (Ctrl+S)" class="pixel-btn">💾 Save PNG</button>
         </div>
 
         <div class="group">
-          <button id="save-project" title="Save project file">Save Project</button>
-          <button id="load-project" title="Load project file">Load Project</button>
+          <button id="save-project" title="Save project file" class="pixel-btn">📦 Save Project</button>
+          <button id="load-project" title="Load project file" class="pixel-btn">📂 Load Project</button>
           <input id="project-file" type="file" accept="application/json" style="display:none">
-          <button id="restore-autosave" title="Restore last autosave">Restore Autosave</button>
+          <button id="restore-autosave" title="Restore last autosave" class="pixel-btn">🔁 Restore</button>
         </div>
 
         <div class="group">
